@@ -1,0 +1,41 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.BakeryApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/lilac_prim</item>
+        <item name="colorPrimaryVariant">@color/lilac_sec</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_prim</item>
+        <item name="colorSecondaryVariant">@color/teal_seco</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    //splash screen theme
+    <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_content</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/dark</item>
+        <item name="colorAccent">@color/lilac_ter</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+    </style>
+
+    //no action bar theme
+    /*<style name="SansActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <!-- Primary brand color. -->
+    <item name="colorPrimary">@color/lilac_prim</item>
+    <item name="colorPrimaryVariant">@color/lilac_sec</item>
+    <item name="colorOnPrimary">@color/light_500</item>
+    <!-- Secondary brand color. -->
+    <item name="colorSecondary">@color/teal_prim</item>
+    <item name="colorSecondaryVariant">@color/teal_seco</item>
+    <item name="colorOnSecondary">@color/black</item>
+    <!-- Status bar color. -->
+    <item name="android:statusBarColor" tools:targetApi="l">@color/status_bar</item>
+    <!-- Customize your theme here. -->
+    <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+</style>
+</resources>

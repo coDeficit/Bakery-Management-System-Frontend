@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Yutu</string>
+    <string name="server_connection_error">Unable to connect to the server</string>
+    <string name="invalid_login_credentials">Invalid username or password</string>
+</resources>
