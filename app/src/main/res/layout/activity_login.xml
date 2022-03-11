@@ -116,5 +116,35 @@
         android:fontFamily="@font/inter_semibold"
         android:shadowColor="@color/transparent"/>
 
+    <LinearLayout
+        android:id="@+id/test_login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/Forgot_password_btn"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/test_login_userid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="userid"
+            android:textAlignment="center"
+            android:textColor="@color/dark"/>
+        <TextView
+            android:id="@+id/test_login_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="username"
+            android:textAlignment="center"
+            android:textColor="@color/dark"/>
+        <TextView
+            android:id="@+id/test_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="password"
+            android:textAlignment="center"
+            android:textColor="@color/dark"/>
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
