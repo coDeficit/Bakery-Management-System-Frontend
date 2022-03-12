@@ -23,7 +23,7 @@ public interface ApiService {
     Call<ArrayList<UserModel>> getAllUsers();
 
     @GET("users/{id}")
-    Call <UserModel> getSingleUser(@Path("id") long userid);
+    Call <UserModel> getSingleUser(@Path("id") int userid);
 
     @POST("users/login")
     Call <UserModel> getLoggedUser(@Body LoginModel loginModel);
@@ -32,55 +32,55 @@ public interface ApiService {
     Call<UserModel> addUser(@Body UserModel userModel);
 
     @PUT("users/{id}")
-    Call<UserModel> updateUser(@Path("id") long userid, @Body UserModel userModel);
+    Call<UserModel> updateUser(@Path("id") int userid, @Body UserModel userModel);
 
     @DELETE("users/{id}")
-    Call<UserModel> deleteUser(@Path("id") long userid);
+    Call<UserModel> deleteUser(@Path("id") int userid);
 
     //for roles data
     @GET("roles/all")
     Call<ArrayList<RoleModel>> getAllRoles();
 
     @GET("roles/{id}")
-    Call <RoleModel> getSingleRole(@Path("id") long roleid);
+    Call <RoleModel> getSingleRole(@Path("id") int roleid);
 
     @POST("roles")
     Call<RoleModel> addRole(@Body RoleModel roleModel);
 
     @PUT("roles/{id}")
-    Call<RoleModel> updateRole(@Path("id") long roleid, @Body RoleModel roleModel);
+    Call<RoleModel> updateRole(@Path("id") int roleid, @Body RoleModel roleModel);
 
     @DELETE("roles/{id}")
-    Call<RoleModel> deleteRole(@Path("id") long roleid);
+    Call<RoleModel> deleteRole(@Path("id") int roleid);
 
     //for jobs data
     @GET("jobs/all")
     Call<ArrayList<JobModel>> getAllJobs();
 
     @GET("jobs/{id}")
-    Call <JobModel> getSingleJob(@Path("id") long jobid);
+    Call <JobModel> getSingleJob(@Path("id") int jobid);
 
     @POST("jobs")
     Call<JobModel> addJob(@Body JobModel jobModel);
 
     @PUT("jobs/{id}")
-    Call<JobModel> updateJob(@Path("id") long jobid, @Body JobModel jobModel);
+    Call<JobModel> updateJob(@Path("id") int jobid, @Body JobModel jobModel);
 
     @DELETE("jobs/{id}")
-    Call<JobModel> deleteJob(@Path("id") long jobid);
+    Call<JobModel> deleteJob(@Path("id") int jobid);
 
     //for employees data
     Call<ArrayList<EmployeeModel>> getAllEmployees();
 
     @GET("employees/{id}")
-    Call <EmployeeModel> getSingleEmployee(@Path("id") long employeeid);
+    Call <EmployeeModel> getSingleEmployee(@Path("id") int employeeid);
 
     @POST("employees")
     Call<EmployeeModel> addEmployee(@Body EmployeeModel employeeModel);
 
     @PUT("employees/{id}")
-    Call<EmployeeModel> updateEmployee(@Path("id") long employeeid, @Body EmployeeModel employeeModel);
+    Call<EmployeeModel> updateEmployee(@Path("id") int employeeid, @Body EmployeeModel employeeModel);
 
     @DELETE("employees/{id}")
-    Call<EmployeeModel> deleteEmployee(@Path("id") long employeeid);
+    Call<EmployeeModel> deleteEmployee(@Path("id") int employeeid);
 }

@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,7 +32,6 @@ public class LoginActivity extends AppCompatActivity {
 
     Button loginbtn;
     EditText user_name, pass;
-    TextView uid, uname, upass;
     boolean isAllFieldsValid = false;
     private ApiService apiService;
     private String username, password;
@@ -52,9 +52,6 @@ public class LoginActivity extends AppCompatActivity {
         loginbtn = findViewById(R.id.login_btn);
         user_name = findViewById(R.id.login_username_input_field);
         pass = findViewById(R.id.login_password_input_field);
-        uid = findViewById(R.id.test_login_userid);
-        uname = findViewById(R.id.test_login_username);
-        upass = findViewById(R.id.test_login_password);
 
         //handle text change
         textChangeValidator();
@@ -90,33 +87,50 @@ public class LoginActivity extends AppCompatActivity {
         loginResponseCall.enqueue(new Callback<UserModel>() {
             @Override
             public void onResponse(Call<UserModel> call, Response<UserModel> response) {
-                if(response.isSuccessful()){
-                    Toast.makeText(LoginActivity.this,"Login Successful", Toast.LENGTH_LONG).show();
+                if (response.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
                     UserModel userModel = response.body();
 
-                    Log.v("LoginResponse", String.valueOf(response.body()));
+                    if(userModel != null) {
 
-                   String uidstr = "Userid: " + String.valueOf(userModel.getUserid());
-                    String unamestr = "Username: " + userModel.getUsername();
-                    String upassstr = "Password: " + userModel.getPassword();
-                    uid.setText(uidstr);
-                    uname.setText(unamestr);
-                    upass.setText(upassstr);
+                        Log.v("LoginResponse", String.valueOf(response.body()));
+                        Log.v("Username", userModel.getUsername());
+                        Log.v("Login Password", password);
 
-                    Log.v("UserData", String.valueOf(userModel));
-                    Log.v("Username", userModel.getUsername());
-                    Log.v("Login Password", password);
+                        userModel.setUserState(true);
 
-                    /*new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
+                        SharedPreferences sharedPreferences = getSharedPreferences("com.se3.bakeryapp", MODE_PRIVATE);
+                        SharedPreferences.Editor myEditor = sharedPreferences.edit();
 
-                            startActivity(new Intent(LoginActivity.this,DashboardActivity.class).putExtra("data",loginResponse.getUsername()));
-                        }
-                    },700);*/
+                        myEditor.putInt("userid", userModel.getUserid());
+                        myEditor.putInt("employeeid", userModel.getEmployee());
+                        myEditor.putInt("roleid", userModel.getRole());
+                        myEditor.putString("username", userModel.getUsername());
+                        myEditor.putString("password", userModel.getUsername());
+                        myEditor.putBoolean("user_state", userModel.getUserState());
+                        myEditor.putString("fullname", userModel.getEmployeeModel().getEmpFullname());
+                        myEditor.putString("role_name", userModel.getRoleModel().getRoleName());
+                        myEditor.putString("email", userModel.getEmployeeModel().getEmpEmail());
+                        myEditor.putString("phone", userModel.getEmployeeModel().getEmpPhone());
+                        myEditor.putString("user_image", userModel.getEmployeeModel().getEmpImage());
+                        myEditor.commit();
 
-                }else{
-                    Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_LONG).show();
+                        changeUserState(userModel, userModel.getUserid());
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                                finish();
+                            }
+                        },700);
+                    } else {
+                        Toast.makeText(LoginActivity.this, "This account doesn't exist!", Toast.LENGTH_LONG).show();
+                    }
+
+                } else {
+                    Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
 
                 }
 
@@ -124,50 +138,51 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<UserModel> call, Throwable t) {
-                Toast.makeText(LoginActivity.this,"Throwable "+t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, "Throwable " + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
 
             }
         });
+    }
 
-        /*
-        Call<UserModel> call = apiService.getLoggedUser(login);
-                call.enqueue(new Callback() {
-                    @Override
-                    public void onResponse(Call call, Response response) {
-                        Log.v("DEBUG", "Requested url: " + call.request().url().toString());
-                        if (response.isSuccessful()) {
-                            UserModel aUser = (UserModel) response.body();
+    private void changeUserState(UserModel userModel, int id) {
+        Call<UserModel> changeStateResponseCall = ApiClient.getApiService().updateUser(id, userModel);
+        changeStateResponseCall.enqueue(new Callback<UserModel>() {
+            @Override
+            public void onResponse(Call<UserModel> call, Response<UserModel> response) {
+                if (response.isSuccessful()) {
+                    UserModel loggedUserModel = response.body();
+                    Log.v("loggedUser", String.valueOf(loggedUserModel));
+                        Log.v("stateChangedResponse", String.valueOf(response.body()));
+                        Log.v("UserData", String.valueOf(loggedUserModel));
 
-                            Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT).show();
-                            Log.v("DEBUG", "User gotten from DB: ");
-                            String uidstr = "Userid: " + aUser.getUserid();
-                            String unamestr = "Username: " + aUser.getUsername();
-                            String upassstr = "Password: " + aUser.getPassword();
-                            uid.setText(uidstr);
-                            uid.setText(unamestr);
-                            uid.setText(upassstr);
+                        SharedPreferences sharedPreferences = getSharedPreferences("com.se3.bakeryapp", MODE_PRIVATE);
+                        SharedPreferences.Editor myEditor = sharedPreferences.edit();
 
-                        } else {
-                            if (response.code() == 500) {
-                                Toast.makeText(getApplicationContext(), R.string.server_connection_error, Toast.LENGTH_LONG).show();
-                            }
-                            if (response.code() == 401) {
-                                Toast.makeText(getApplicationContext(), R.string.invalid_login_credentials, Toast.LENGTH_LONG).show();
-                            }
+                        myEditor.putInt("userid", loggedUserModel.getUserid());
+                        myEditor.putInt("employeeid", loggedUserModel.getEmployee());
+                        myEditor.putInt("roleid", loggedUserModel.getRole());
+                        myEditor.putString("username", loggedUserModel.getUsername());
+                        myEditor.putString("password", loggedUserModel.getUsername());
+                        myEditor.putBoolean("user_state", loggedUserModel.getUserState());
+                        myEditor.putString("fullname", loggedUserModel.getEmployeeModel().getEmpFullname());
+                        myEditor.putString("role_name", loggedUserModel.getRoleModel().getRoleName());
+                        myEditor.putString("email", loggedUserModel.getEmployeeModel().getEmpEmail());
+                        myEditor.putString("phone", loggedUserModel.getEmployeeModel().getEmpPhone());
+                        myEditor.putString("user_image", loggedUserModel.getEmployeeModel().getEmpImage());
+                        myEditor.commit();
+                } else {
+                    Log.v("isStateChangedFailed", "Failed to change user state");
 
-                            Log.v("Request Error", String.format("Code: %d, text: %s, more text: %s", response.code(), response.message(), response.raw().body().toString()));
-                        }
+                }
 
-                    }
+            }
 
-                    @Override
-                    public void onFailure(Call call, Throwable t) {
-                        Log.v("ERROR", "Call failed: " + t.toString());
-                        call.cancel();
-                        Toast.makeText(getApplicationContext(), R.string.server_connection_error, Toast.LENGTH_LONG).show();
-                    }
-                });*/
+            @Override
+            public void onFailure(Call<UserModel> call, Throwable t) {
+                Log.v("isStateChangedFResponse", "Throwable " + t.getLocalizedMessage());
 
+            }
+        });
     }
 
     // function which checks all the text fields are filled or not by the user.

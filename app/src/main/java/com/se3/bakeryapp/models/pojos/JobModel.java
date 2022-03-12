@@ -4,58 +4,49 @@ import com.google.gson.annotations.SerializedName;
 
 public class JobModel {
 
-    @SerializedName("updatedat")
-    private String updatedat;
-    @SerializedName("createdat")
-    private String createdat;
-    @SerializedName("description")
-    private String description;
-    @SerializedName("title")
-    private String title;
+    @SerializedName("job_desc")
+    private String jobDesc;
+    @SerializedName("job_title")
+    private String jobTitle;
     @SerializedName("jobid")
-    private long jobid = 0;
+    private int jobid;
 
-    public JobModel() {
+    public JobModel(){
 
     }
 
-    public String getUpdatedat() {
-        return updatedat;
+    public JobModel(String jobDesc, String jobTitle, int jobid) {
+        this.jobDesc = jobDesc;
+        this.jobTitle = jobTitle;
+        this.jobid = jobid;
     }
 
-    public void setUpdatedat(String updatedat) {
-        this.updatedat = updatedat;
+    public JobModel(String jobDesc, String jobTitle) {
+        this.jobDesc = jobDesc;
+        this.jobTitle = jobTitle;
     }
 
-    public String getCreatedat() {
-        return createdat;
+    public String getJobDesc() {
+        return jobDesc;
     }
 
-    public void setCreatedat(String createdat) {
-        this.createdat = createdat;
+    public void setJobDesc(String jobDesc) {
+        this.jobDesc = jobDesc;
     }
 
-    public String getDescription() {
-        return description;
+    public String getJobTitle() {
+        return jobTitle;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public long getJobid() {
+    public int getJobid() {
         return jobid;
     }
 
-    public void setJobid(long jobid) {
+    public void setJobid(int jobid) {
         this.jobid = jobid;
     }
 }

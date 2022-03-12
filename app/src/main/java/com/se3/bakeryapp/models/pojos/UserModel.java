@@ -8,26 +8,22 @@ public class UserModel {
     private RoleModel roleModel;
     @SerializedName("employee_details")
     private EmployeeModel employeeModel;
-    @SerializedName("updatedat")
-    private String updatedat;
-    @SerializedName("createdat")
-    private String createdat;
-    @SerializedName("state")
-    private boolean state;
+    @SerializedName("user_updatedat")
+    private String userUpdatedat;
+    @SerializedName("user_createdat")
+    private String userCreatedat;
+    @SerializedName("user_state")
+    private boolean userState;
     @SerializedName("password")
     private String password;
     @SerializedName("username")
     private String username;
-    @SerializedName("roleid")
-    private int roleid;
-    @SerializedName("employeeid")
-    private int employeeid;
+    @SerializedName("role")
+    private int role;
+    @SerializedName("employee")
+    private int employee;
     @SerializedName("userid")
     private int userid;
-
-    public  UserModel() {
-
-    }
 
     public RoleModel getRoleModel() {
         return roleModel;
@@ -45,28 +41,28 @@ public class UserModel {
         this.employeeModel = employeeModel;
     }
 
-    public String getUpdatedat() {
-        return updatedat;
+    public String getUserUpdatedat() {
+        return userUpdatedat;
     }
 
-    public void setUpdatedat(String updatedat) {
-        this.updatedat = updatedat;
+    public void setUserUpdatedat(String userUpdatedat) {
+        this.userUpdatedat = userUpdatedat;
     }
 
-    public String getCreatedat() {
-        return createdat;
+    public String getUserCreatedat() {
+        return userCreatedat;
     }
 
-    public void setCreatedat(String createdat) {
-        this.createdat = createdat;
+    public void setUserCreatedat(String userCreatedat) {
+        this.userCreatedat = userCreatedat;
     }
 
-    public boolean getState() {
-        return state;
+    public boolean getUserState() {
+        return userState;
     }
 
-    public void setState(boolean state) {
-        this.state = state;
+    public void setUserState(boolean userState) {
+        this.userState = userState;
     }
 
     public String getPassword() {
@@ -85,20 +81,20 @@ public class UserModel {
         this.username = username;
     }
 
-    public int getRoleid() {
-        return roleid;
+    public int getRole() {
+        return role;
     }
 
-    public void setRoleid(int roleid) {
-        this.roleid = roleid;
+    public void setRole(int role) {
+        this.role = role;
     }
 
-    public int getEmployeeid() {
-        return employeeid;
+    public int getEmployee() {
+        return employee;
     }
 
-    public void setEmployeeid(int employeeid) {
-        this.employeeid = employeeid;
+    public void setEmployee(int employee) {
+        this.employee = employee;
     }
 
     public int getUserid() {
@@ -110,41 +106,21 @@ public class UserModel {
     }
 
     public static class RoleModel {
-        @SerializedName("updatedat")
-        private String updatedat;
-        @SerializedName("createdat")
-        private String createdat;
-        @SerializedName("description")
-        private String description;
+        @SerializedName("role_desc")
+        private String roleDesc;
         @SerializedName("permissions")
         private String permissions;
-        @SerializedName("name")
-        private String name;
+        @SerializedName("role_name")
+        private String roleName;
         @SerializedName("roleid")
         private int roleid;
 
-        public String getUpdatedat() {
-            return updatedat;
+        public String getRoleDesc() {
+            return roleDesc;
         }
 
-        public void setUpdatedat(String updatedat) {
-            this.updatedat = updatedat;
-        }
-
-        public String getCreatedat() {
-            return createdat;
-        }
-
-        public void setCreatedat(String createdat) {
-            this.createdat = createdat;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
+        public void setRoleDesc(String roleDesc) {
+            this.roleDesc = roleDesc;
         }
 
         public String getPermissions() {
@@ -155,12 +131,12 @@ public class UserModel {
             this.permissions = permissions;
         }
 
-        public String getName() {
-            return name;
+        public String getRoleName() {
+            return roleName;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setRoleName(String roleName) {
+            this.roleName = roleName;
         }
 
         public int getRoleid() {
@@ -173,129 +149,129 @@ public class UserModel {
     }
 
     public static class EmployeeModel {
-        @SerializedName("updatedat")
-        private String updatedat;
-        @SerializedName("createdat")
-        private String createdat;
-        @SerializedName("notes")
-        private String notes;
-        @SerializedName("status")
-        private String status;
-        @SerializedName("image")
-        private String image;
-        @SerializedName("salary")
-        private int salary;
-        @SerializedName("country")
-        private String country;
-        @SerializedName("state")
-        private String state;
-        @SerializedName("city")
-        private String city;
-        @SerializedName("address2")
-        private String address2;
-        @SerializedName("address1")
-        private String address1;
+        @SerializedName("emp_updatedat")
+        private String empUpdatedat;
+        @SerializedName("emp_createdat")
+        private String empCreatedat;
+        @SerializedName("emp_notes")
+        private String empNotes;
+        @SerializedName("emp_status")
+        private String empStatus;
+        @SerializedName("emp_image")
+        private String empImage;
+        @SerializedName("emp_salary")
+        private int empSalary;
+        @SerializedName("emp_country")
+        private String empCountry;
+        @SerializedName("emp_state")
+        private String empState;
+        @SerializedName("emp_city")
+        private String empCity;
+        @SerializedName("emp_address2")
+        private String empAddress2;
+        @SerializedName("emp_address1")
+        private String empAddress1;
         @SerializedName("employ_type")
         private String employType;
-        @SerializedName("email")
-        private String email;
-        @SerializedName("phone")
-        private String phone;
-        @SerializedName("gender")
-        private String gender;
-        @SerializedName("fullname")
-        private String fullname;
-        @SerializedName("jobid")
-        private int jobid;
+        @SerializedName("emp_email")
+        private String empEmail;
+        @SerializedName("emp_phone")
+        private String empPhone;
+        @SerializedName("emp_gender")
+        private String empGender;
+        @SerializedName("emp_fullname")
+        private String empFullname;
+        @SerializedName("job")
+        private int job;
         @SerializedName("employeeid")
         private int employeeid;
 
-        public String getUpdatedat() {
-            return updatedat;
+        public String getEmpUpdatedat() {
+            return empUpdatedat;
         }
 
-        public void setUpdatedat(String updatedat) {
-            this.updatedat = updatedat;
+        public void setEmpUpdatedat(String empUpdatedat) {
+            this.empUpdatedat = empUpdatedat;
         }
 
-        public String getCreatedat() {
-            return createdat;
+        public String getEmpCreatedat() {
+            return empCreatedat;
         }
 
-        public void setCreatedat(String createdat) {
-            this.createdat = createdat;
+        public void setEmpCreatedat(String empCreatedat) {
+            this.empCreatedat = empCreatedat;
         }
 
-        public String getNotes() {
-            return notes;
+        public String getEmpNotes() {
+            return empNotes;
         }
 
-        public void setNotes(String notes) {
-            this.notes = notes;
+        public void setEmpNotes(String empNotes) {
+            this.empNotes = empNotes;
         }
 
-        public String getStatus() {
-            return status;
+        public String getEmpStatus() {
+            return empStatus;
         }
 
-        public void setStatus(String status) {
-            this.status = status;
+        public void setEmpStatus(String empStatus) {
+            this.empStatus = empStatus;
         }
 
-        public String getImage() {
-            return image;
+        public String getEmpImage() {
+            return empImage;
         }
 
-        public void setImage(String image) {
-            this.image = image;
+        public void setEmpImage(String empImage) {
+            this.empImage = empImage;
         }
 
-        public int getSalary() {
-            return salary;
+        public int getEmpSalary() {
+            return empSalary;
         }
 
-        public void setSalary(int salary) {
-            this.salary = salary;
+        public void setEmpSalary(int empSalary) {
+            this.empSalary = empSalary;
         }
 
-        public String getCountry() {
-            return country;
+        public String getEmpCountry() {
+            return empCountry;
         }
 
-        public void setCountry(String country) {
-            this.country = country;
+        public void setEmpCountry(String empCountry) {
+            this.empCountry = empCountry;
         }
 
-        public String getState() {
-            return state;
+        public String getEmpState() {
+            return empState;
         }
 
-        public void setState(String state) {
-            this.state = state;
+        public void setEmpState(String empState) {
+            this.empState = empState;
         }
 
-        public String getCity() {
-            return city;
+        public String getEmpCity() {
+            return empCity;
         }
 
-        public void setCity(String city) {
-            this.city = city;
+        public void setEmpCity(String empCity) {
+            this.empCity = empCity;
         }
 
-        public String getAddress2() {
-            return address2;
+        public String getEmpAddress2() {
+            return empAddress2;
         }
 
-        public void setAddress2(String address2) {
-            this.address2 = address2;
+        public void setEmpAddress2(String empAddress2) {
+            this.empAddress2 = empAddress2;
         }
 
-        public String getAddress1() {
-            return address1;
+        public String getEmpAddress1() {
+            return empAddress1;
         }
 
-        public void setAddress1(String address1) {
-            this.address1 = address1;
+        public void setEmpAddress1(String empAddress1) {
+            this.empAddress1 = empAddress1;
         }
 
         public String getEmployType() {
@@ -306,44 +282,44 @@ public class UserModel {
             this.employType = employType;
         }
 
-        public String getEmail() {
-            return email;
+        public String getEmpEmail() {
+            return empEmail;
         }
 
-        public void setEmail(String email) {
-            this.email = email;
+        public void setEmpEmail(String empEmail) {
+            this.empEmail = empEmail;
         }
 
-        public String getPhone() {
-            return phone;
+        public String getEmpPhone() {
+            return empPhone;
         }
 
-        public void setPhone(String phone) {
-            this.phone = phone;
+        public void setEmpPhone(String empPhone) {
+            this.empPhone = empPhone;
         }
 
-        public String getGender() {
-            return gender;
+        public String getEmpGender() {
+            return empGender;
         }
 
-        public void setGender(String gender) {
-            this.gender = gender;
+        public void setEmpGender(String empGender) {
+            this.empGender = empGender;
         }
 
-        public String getFullname() {
-            return fullname;
+        public String getEmpFullname() {
+            return empFullname;
         }
 
-        public void setFullname(String fullname) {
-            this.fullname = fullname;
+        public void setEmpFullname(String empFullname) {
+            this.empFullname = empFullname;
         }
 
-        public int getJobid() {
-            return jobid;
+        public int getJob() {
+            return job;
         }
 
-        public void setJobid(int jobid) {
-            this.jobid = jobid;
+        public void setJob(int job) {
+            this.job = job;
         }
 
         public int getEmployeeid() {
@@ -353,5 +329,9 @@ public class UserModel {
         public void setEmployeeid(int employeeid) {
             this.employeeid = employeeid;
         }
+    }
+
+    public UserModel() {
+
     }
 }

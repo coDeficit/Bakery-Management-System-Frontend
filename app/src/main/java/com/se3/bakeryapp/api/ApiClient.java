@@ -22,7 +22,7 @@ public class ApiClient {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .baseUrl("http://192.168.246.212:8080/BakeryBackend/webresources/")  //Change server URL
+                .baseUrl("http://192.168.43.53:8080/BakeryBackend/webresources/")  //Change server URL
                 .client(okHttpClient)
                 .build();
 

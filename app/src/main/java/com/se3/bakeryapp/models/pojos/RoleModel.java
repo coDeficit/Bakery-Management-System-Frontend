@@ -2,46 +2,27 @@ package com.se3.bakeryapp.models.pojos;
 
 import com.google.gson.annotations.SerializedName;
 
-public class RoleModel {
-    @SerializedName("updatedat")
-    private String updatedat;
-    @SerializedName("createdat")
-    private String createdat;
-    @SerializedName("description")
-    private String description;
+public abstract class RoleModel {
+
+    @SerializedName("role_desc")
+    private String roleDesc;
     @SerializedName("permissions")
     private String permissions;
-    @SerializedName("name")
-    private String name;
+    @SerializedName("role_name")
+    private String roleName;
     @SerializedName("roleid")
-    private long roleid = 0;
+    private int roleid;
 
     public RoleModel() {
 
     }
 
-    public String getUpdatedat() {
-        return updatedat;
+    public String getRoleDesc() {
+        return roleDesc;
     }
 
-    public void setUpdatedat(String updatedat) {
-        this.updatedat = updatedat;
-    }
-
-    public String getCreatedat() {
-        return createdat;
-    }
-
-    public void setCreatedat(String createdat) {
-        this.createdat = createdat;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setRoleDesc(String roleDesc) {
+        this.roleDesc = roleDesc;
     }
 
     public String getPermissions() {
@@ -52,19 +33,19 @@ public class RoleModel {
         this.permissions = permissions;
     }
 
-    public String getName() {
-        return name;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
-    public long getRoleid() {
+    public int getRoleid() {
         return roleid;
     }
 
-    public void setRoleid(long roleid) {
+    public void setRoleid(int roleid) {
         this.roleid = roleid;
     }
 }

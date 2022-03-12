@@ -120,30 +120,30 @@
         android:id="@+id/test_login_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Forgot_password_btn"
-        android:orientation="vertical">
+        android:layout_marginTop="56dp">
 
         <TextView
             android:id="@+id/test_login_userid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="userid"
+            android:text="Bake . Sell . Manage"
             android:textAlignment="center"
-            android:textColor="@color/dark"/>
+            android:textColor="@color/light_100" />
+
         <TextView
             android:id="@+id/test_login_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="username"
+            android:text="2022"
             android:textAlignment="center"
-            android:textColor="@color/dark"/>
-        <TextView
-            android:id="@+id/test_login_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="password"
-            android:textAlignment="center"
-            android:textColor="@color/dark"/>
+            android:textColor="@color/light_500" />
     </LinearLayout>
 
 
