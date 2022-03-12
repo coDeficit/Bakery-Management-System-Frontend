@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:text="Bake . Sell . Manage"
             android:textAlignment="center"
-            android:textColor="@color/light_100" />
+            android:textColor="@color/light_500" />
 
         <TextView
             android:id="@+id/test_login_username"

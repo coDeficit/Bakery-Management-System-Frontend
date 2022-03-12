@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_checkout">
+
+    <fragment
+        android:id="@+id/nav_checkout"
+        android:name="com.se3.bakeryapp.ui.checkout.CheckoutFragment"
+        android:label="Checkout"
+        tools:layout="@layout/fragment_checkout" />
+
+    <fragment
+        android:id="@+id/nav_orders"
+        android:name="com.se3.bakeryapp.ui.orders.OrderFragment"
+        android:label="Orders"
+        tools:layout="@layout/fragment_order" />
+
+    <fragment
+        android:id="@+id/nav_product"
+        android:name="com.se3.bakeryapp.ui.products.ProductFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_product" />
+
+    <fragment
+        android:id="@+id/nav_customers"
+        android:name="com.se3.bakeryapp.ui.customers.CustomerFragment"
+        android:label="Customers"
+        tools:layout="@layout/fragment_customer" />
+
+    <fragment
+        android:id="@+id/nav_users"
+        android:name="com.se3.bakeryapp.ui.users.UserFragment"
+        android:label="Users"
+        tools:layout="@layout/fragment_user" />
+</navigation>

@@ -14,15 +14,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.se3.bakeryapp.api.ApiClient;
 import com.se3.bakeryapp.api.ApiService;
 import com.se3.bakeryapp.models.pojos.LoginModel;
 import com.se3.bakeryapp.models.pojos.UserModel;
-
-import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -115,13 +112,15 @@ public class LoginActivity extends AppCompatActivity {
                         myEditor.putString("user_image", userModel.getEmployeeModel().getEmpImage());
                         myEditor.commit();
 
-                        changeUserState(userModel, userModel.getUserid());
+                        if(!userModel.getUserState()) {
+                            changeUserState(userModel, userModel.getUserid());
+                        }
 
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
 
-                                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                                startActivity(new Intent(LoginActivity.this, NavigationActivity.class));
                                 finish();
                             }
                         },700);

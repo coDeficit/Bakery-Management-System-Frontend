@@ -6,10 +6,22 @@
         <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/drawable/btn_transparent.xml" value="0.2225" />
         <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/drawable/button_prim_round.xml" value="0.2225" />
         <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/drawable/input_light.xml" value="0.2225" />
+        <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/drawable/nav_badge_background.xml" value="0.122" />
+        <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/drawable/side_nav_bar.xml" value="0.1695" />
         <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/drawable/spalsh_content.xml" value="0.1985" />
         <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/drawable/splash_fill.xml" value="0.1985" />
         <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/layout/activity_main.xml" value="0.3536458333333333" />
+        <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/layout/activity_navigation.xml" value="0.240625" />
+        <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/layout/app_bar_navigation.xml" value="0.240625" />
+        <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/layout/content_navigation.xml" value="0.2671875" />
+        <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/layout/fragment_checkout.xml" value="0.31015625" />
+        <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/layout/fragment_customer.xml" value="0.31015625" />
+        <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/layout/fragment_order.xml" value="0.31015625" />
+        <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/layout/fragment_product.xml" value="0.31015625" />
+        <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/layout/fragment_user.xml" value="0.31015625" />
+        <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/layout/nav_header_navigation.xml" value="0.5" />
+        <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/menu/main_nav_drawer.xml" value="0.2671875" />
         <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1985" />
         <entry key="..\:/DailyBreadProject/BakeryManagementSystem_Frontend/BakeryApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1985" />
       </map>
